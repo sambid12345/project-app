@@ -19,14 +19,7 @@ import { RecipesRoutingModule } from "./recipes-routing.module";
         RecipeStartComponent,
 		RecipeEditComponent
     ],
-    exports:[
-        RecipesComponent,
-		RecipeListComponent,
-		RecipeDetailComponent,
-		RecipeItemComponent,
-        RecipeStartComponent,
-		RecipeEditComponent
-    ],
+    exports:[],
     imports :[
         RouterModule,
         CommonModule,

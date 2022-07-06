@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
@@ -13,13 +11,12 @@ import { AuthComponent } from './auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AlertComponent } from './shared/alert/alert.component';
 import { RecipesModule } from './recipes/recipes.module';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		HeaderComponent,		
-		ShoppingListComponent,
-		ShoppingEditComponent,
+		HeaderComponent,			
 		AuthComponent,
 		LoadingSpinnerComponent,
 		AlertComponent
@@ -30,7 +27,8 @@ import { RecipesModule } from './recipes/recipes.module';
 		ReactiveFormsModule,
 		FormsModule,
 		HttpClientModule,
-		RecipesModule
+		RecipesModule,
+		ShoppingListModule
 	],
 	providers: [ShoppingListService, RecipeService],
 	bootstrap: [AppComponent]
