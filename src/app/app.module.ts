@@ -28,7 +28,7 @@ import { SharedModule } from './shared/shared.module';
 		ShoppingListModule,
 		SharedModule
 	],
-	providers: [ShoppingListService, RecipeService],
+	providers: [],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
