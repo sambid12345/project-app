@@ -8,18 +8,15 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './auth/auth.component';
-import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
-import { AlertComponent } from './shared/alert/alert.component';
 import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		HeaderComponent,			
 		AuthComponent,
-		LoadingSpinnerComponent,
-		AlertComponent
 	],
 	imports: [
 		BrowserModule,
@@ -28,7 +25,8 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
 		FormsModule,
 		HttpClientModule,
 		RecipesModule,
-		ShoppingListModule
+		ShoppingListModule,
+		SharedModule
 	],
 	providers: [ShoppingListService, RecipeService],
 	bootstrap: [AppComponent]
