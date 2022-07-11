@@ -15,7 +15,7 @@ import { AuthComponent } from "./auth.component";
         ReactiveFormsModule,
         RouterModule,
         RouterModule.forChild([
-            {path: 'auth', component: AuthComponent}
+            {path: '', component: AuthComponent}
         ]),
         SharedModule
     ]
