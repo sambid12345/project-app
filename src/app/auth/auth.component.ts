@@ -6,7 +6,8 @@ import { AuthResponseData, AuthService } from "./auth.service";
 
 @Component({
     selector: 'app-auth',
-    templateUrl: './auth.component.html'
+    templateUrl: './auth.component.html',
+    styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit{
 
@@ -60,5 +61,8 @@ export class AuthComponent implements OnInit{
     }
     onSwitch(){
         this.isLoginMode = !this.isLoginMode;
+    }
+    toggleVisible(){
+        this.hidePassword = !this.hidePassword;
     }
 }
