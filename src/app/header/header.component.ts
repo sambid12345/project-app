@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 	private userSub: Subscription;
 	isAunthicated = false;
 	collapsed = true;
+	display = "none";
 	constructor(private dataStorageSrvice: DataStorageService, private authService: AuthService) { }
 
 	ngOnInit(): void {
@@ -33,6 +34,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
 	onLogOut(){
 		this.authService.logOut();
 	}
+	openModal() {
+        this.display = "block";
+    }
+    onCloseHandled() {
+        this.display = "none";
+    }
 	ngOnDestroy(): void {
 		this.userSub.unsubscribe();
 	}

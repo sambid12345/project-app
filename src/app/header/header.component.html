@@ -15,7 +15,7 @@
 			</ul>
 			
 			<div class="navbar-nav nav navbar-right " style="margin-right: 20px;">
-				<li *ngIf="isAunthicated" style="cursor:pointer"><a (click)="onLogOut()">Logout</a></li>
+				<li *ngIf="isAunthicated" style="cursor:pointer"><a (click)="openModal()">Logout</a></li>
 				<select *ngIf="isAunthicated" (change) = "onChange($event.target.value)" class="manage-dropdown" >
 					<option value="null">Manage</option>
 					<option>Save Data</option>
@@ -25,3 +25,17 @@
 		</div>
 	</div>
 </nav>
+
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="top: 80px;">
+			<div class="modal-body">
+				<button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+				<p class="message">Are you sure to Logout</p>
+				<button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>|
+				<button type="button" class="btn btn-default" (click)="onCloseHandled(); onLogOut()" >Logout</button>
+			</div>
+            
+        </div>
+    </div>
+ </div>

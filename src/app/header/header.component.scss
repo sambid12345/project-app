@@ -1,5 +1,19 @@
+.navbar-default{
+    background-color: #9ec6e8;;
+}
 .manage-dropdown{
     background: border-box;
     border: none;
     height: 54px;
+}
+.modal-body{
+    position: relative;
+    padding: 15px;
+    margin: 30px;
+    background-color: #337ab7;
+    text-align: center;
+}
+.message{
+    color: white;
+    font-size: 24px;
 }
