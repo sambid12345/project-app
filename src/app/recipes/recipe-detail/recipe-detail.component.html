@@ -10,6 +10,11 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
+        {{singleRecipe?.description}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
         <div class="btn-group">
           <select (change) = "onChange($event.target.value)" class="btn-primary" style="padding: 8px 12px; border-radius: 4px;">
             <option value="null">Manage Recipe</option>
@@ -20,11 +25,7 @@
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-xs-12">
-        {{singleRecipe?.description}}
-    </div>
-</div>
+
 <div class="row">
     <div class="col-xs-12">
         <ul class="list-group">
