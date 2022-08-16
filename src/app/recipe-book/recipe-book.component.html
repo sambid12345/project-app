@@ -1,0 +1,36 @@
+<!-- <ul>
+    <li *ngFor="let food of recipeBook">
+        <a (click)="addOnRecipe(food)" > 
+            <img [src]="food.imagePath" alt="" width="250" height="250"> 
+            <div class="content">
+                <div class="name">
+                    {{food.name}}
+                </div>
+                <span class="favourite">
+
+                </span>
+            </div>
+        </a>
+    </li>
+</ul>
+   -->
+
+<!-- <mat-card>Simple card</mat-card> -->
+<div class="content">
+    <div fxLayout = "row wrap" fxLayoutGap="15px grid">
+        <div fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let food of recipeBook">
+            <mat-card class="mat-elevation-z4" (click)="addOnRecipe(food)">
+                <mat-card-header>
+                    <mat-card-title>{{food.name}}</mat-card-title>
+                </mat-card-header>
+                <!-- <img mat-card-image [src]="food.imagePath" alt=""> -->
+                <mat-card-content>
+                    <img mat-card-image [src]="food.imagePath" alt="">
+                </mat-card-content>
+                <mat-card-actions>
+                    <!-- <button>button1</button> -->
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div> 
+</div>
