@@ -1,7 +1,7 @@
 <div class="content">
     <div fxLayout = "row wrap" fxLayoutGap="15px grid">
         <div fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let food of recipeBook">
-            <mat-card class="mat-elevation-z4" (click)="addOnRecipe(food)">
+            <mat-card class="mat-elevation-z4" (click)="openModal(food)">
                 <mat-card-header>
                     <mat-card-title>{{food.name}}</mat-card-title>
                 </mat-card-header>
@@ -16,3 +16,15 @@
         </div>
     </div> 
 </div>
+ <!-- Modal popup  -->
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="top: 80px;">
+			<div class="modal-body">
+				<button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+				<button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>|
+				<button type="button" class="btn btn-default" (click)="onCloseHandled(); addOnRecipe()" >Add to Recipe List</button>
+			</div>      
+        </div>
+    </div>
+ </div>

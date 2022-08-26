@@ -7,6 +7,7 @@
 		</div>
 		<div class="navbar-default">
 			<ul class="nav navbar-nav">
+				<li *ngIf="isAunthicated" routerLinkActive="active"><a routerLink="/To-Do">To-Do</a></li>
 				<li *ngIf="isAunthicated" routerLinkActive="active"><a routerLink="/recipe-book">Recipe Book</a></li>
 				<li *ngIf="!isAunthicated" routerLinkActive="active"><a routerLink="/auth">Authenticate</a></li>
 				<li *ngIf="isAunthicated" routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li>
@@ -33,8 +34,7 @@
 				<p class="message">Are you sure to Logout</p>
 				<button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>|
 				<button type="button" class="btn btn-default" (click)="onCloseHandled(); onLogOut()" >Logout</button>
-			</div>
-            
+			</div>      
         </div>
     </div>
  </div>

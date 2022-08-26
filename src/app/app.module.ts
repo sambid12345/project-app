@@ -7,18 +7,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { RecipeBookComponent } from './recipe-book/recipe-book.component';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatCardModule } from "@angular/material/card";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatButtonModule } from "@angular/material/button";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialExampleModule } from './shared/material.module';
+import { ToDoComponent } from './to-do/to-do.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		HeaderComponent,	
-		RecipeBookComponent
+		RecipeBookComponent, 
+		ToDoComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -27,12 +27,10 @@ import { MaterialExampleModule } from './shared/material.module';
 		FormsModule,
 		HttpClientModule,
 		SharedModule,
-		MatSliderModule,
-		MatCardModule,
-		MatToolbarModule,
-		MatButtonModule,
 		FlexLayoutModule,
-		MaterialExampleModule
+		MaterialExampleModule,
+		BrowserAnimationsModule,
+		DragDropModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
