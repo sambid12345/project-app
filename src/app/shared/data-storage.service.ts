@@ -20,12 +20,15 @@ export class DataStorageService{
     }
     fetchRecipe(){
         return this.authService.user.pipe(take(1),exhaustMap(user =>{
-            const url = 'https://angular-tutorialbe-default-rtdb.firebaseio.com/recipes.json';
-            return this.http.get<Recipe[]>(url,
-                {
-                    params: new HttpParams().set('auth', user?.token)
-                })
-        }),
+            // const url = 'https://angular-tutorialbe-default-rtdb.firebaseio.com/recipes.json';
+            const url = 'http://localhost:3000/fetchRecipe'
+            return this.http.get<Recipe[]>(url
+                // ,
+                // {
+                //     params: new HttpParams().set('auth', user?.token)
+                // }
+                )
+        }), tap((recipeList)=>{console.log('Recipe List', recipeList)}),
         map(recipes =>{
             return recipes.map(recipe=>{
                 return {...recipe, ingredient: recipe.ingredient? recipe.ingredient: []};

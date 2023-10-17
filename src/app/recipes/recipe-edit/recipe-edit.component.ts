@@ -10,7 +10,7 @@ import { RecipeService } from '../recipe.service';
 	styleUrls: ['./recipe-edit.component.scss']
 })
 export class RecipeEditComponent implements OnInit {
-	id: number;
+	id: any;
 	editExistRecipeMode: boolean = false;
 	recipeForm : FormGroup
 	

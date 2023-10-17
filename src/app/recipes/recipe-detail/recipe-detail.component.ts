@@ -11,13 +11,13 @@ import { RecipeService } from '../recipe.service';
 export class RecipeDetailComponent implements OnInit {
 
 	singleRecipe:Recipe
-	id: number
+	id: any
 	constructor(private recipeService: RecipeService, private router:Router, private route: ActivatedRoute) { }
 
 	ngOnInit(): void {
 		this.route.params.subscribe(
 			(params: Params)=>{
-				this.id = +params['id'];
+				this.id = params['id'];
 				this.singleRecipe = this.recipeService.getRecipeById(this.id);
 			}
 		);
