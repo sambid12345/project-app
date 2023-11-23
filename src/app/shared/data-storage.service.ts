@@ -9,13 +9,16 @@ import { RecipeService } from "../recipes/recipe.service";
 export class DataStorageService{
     constructor(private http: HttpClient, private recipeService: RecipeService, private authService: AuthService){}
     
+    
     storeRecipe(){
         const recipe = this.recipeService.getRecipes();
-        const url = 'https://angular-tutorialbe-default-rtdb.firebaseio.com/recipes.json';
-
+       console.log('recipe to be updated', recipe);
+        // const url = 'https://angular-tutorialbe-default-rtdb.firebaseio.com/recipes.json';
+        const url = 'http://localhost:3000/storeRecipes'
         return this.authService.user.pipe(take(1),exhaustMap(user =>{
-            return this.http.put(url,recipe,
-                {params: new HttpParams().set('auth', user?.token)});
+            return this.http.put(url,recipe
+                // , {params: new HttpParams().set('auth', user?.token)}
+                );
         }))   
     }
     fetchRecipe(){

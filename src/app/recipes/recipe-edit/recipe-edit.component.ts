@@ -34,12 +34,14 @@ export class RecipeEditComponent implements OnInit {
 			recipeDescription = '', 
 			recipeImagePath ='',
 			recipeIngredient = new FormArray([]);
+			
 
 		if(this.editExistRecipeMode){
 			const recipe = this.recipeService.getRecipeById(this.id);
 			recipeName = recipe.name;
 			recipeDescription = recipe.description;
-			recipeImagePath = recipe.imagePath
+			recipeImagePath = recipe.imagePath;
+			
 			if(recipe['ingredient']){
 				for(let ing of recipe.ingredient){
 					recipeIngredient.push(
@@ -55,7 +57,8 @@ export class RecipeEditComponent implements OnInit {
 			'name': new FormControl(recipeName,[Validators.required]),
 			'imagePath': new FormControl(recipeImagePath, [Validators.required]),
 			'description': new FormControl(recipeDescription, [Validators.required]),
-			'ingredient': recipeIngredient
+			'ingredient': recipeIngredient,
+			
 
 		});
 	}
@@ -64,15 +67,31 @@ export class RecipeEditComponent implements OnInit {
 	}
 	onSubmit(){
 		console.log(this.recipeForm);
-		const newRecipe = new Recipe(
+		// public _id: any
+		// public name:string;
+		// public description:string;
+		// public imagePath:string;
+		// public ingredient: Ingredient[];
+		// public height: string;
+		// public price: Number;
+		// public star : Number;
+		
+		let newRecipe = new Recipe(
 			this.recipeForm.get('name').value,
 			this.recipeForm.get('description').value,
 			this.recipeForm.get('imagePath').value,
-			this.recipeForm.get('ingredient').value
+			this.recipeForm.get('ingredient').value,
+			//null,  // for _ id
+			//null,  // for height
+			//null,  // price
+			//null   //star
 		);
+		// console.log('new recipe', newRecipe);
 		if(this.editExistRecipeMode){
+			// console.log('ID', this.id);
 			this.recipeService.updateRecipe(this.id,newRecipe);
 		}else{
+			
 			this.recipeService.addRecipe(newRecipe);
 		}
 	}

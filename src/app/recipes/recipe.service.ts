@@ -19,8 +19,20 @@ export class RecipeService {
         this.recipes.push(recipe);
         this.recipeChanged.next(this.recipes.slice());
     }
-    updateRecipe(index: number,newRecipe: Recipe){
-        this.recipes[index] = newRecipe;
+    updateRecipe(id: any,newRecipe: Recipe){
+        let existedIndex = this.recipes.findIndex((recipe)=>{
+            return recipe._id == id
+        })
+        // console.log('index found', existedIndex);
+        let oldRecipe = this.getRecipeById(id);
+        this.recipes[existedIndex] = 
+        {...newRecipe,
+             _id: id, 
+            height: oldRecipe.height,
+            price: oldRecipe.price, 
+            star: oldRecipe.star
+        };
+        // console.log('updatd recipe', this.recipes);
         this.recipeChanged.next(this.recipes.slice());
     }
     deleteRecipe(index: number){
