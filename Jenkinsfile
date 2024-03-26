@@ -12,7 +12,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 // Use Node.js and npm installed on the Jenkins agent
-                sh 'npm install'
+                bat 'npm install'
                 echo 'installing dependencies'
             }
         }
