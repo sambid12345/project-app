@@ -9,13 +9,13 @@ pipeline {
             }
         }
 
-        // stage('Install Dependencies') {
-        //     steps {
-        //         // Use Node.js and npm installed on the Jenkins agent
-        //         sh 'npm install'
-        //         echo 'installing dependencies'
-        //     }
-        // }
+        stage('Install Dependencies') {
+            steps {
+                // Use Node.js and npm installed on the Jenkins agent
+                sh 'npm install'
+                echo 'installing dependencies'
+            }
+        }
         // stage('Build') {
         //     steps {
         //         echo 'Building..'
